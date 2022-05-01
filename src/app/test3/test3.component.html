@@ -1,0 +1,61 @@
+<p>test3 works!</p>
+<div class="container">
+<div>
+    <label for="">Enter first name</label>
+    <input  type="text" #firstName>
+    <label for="">Enter last name</label>
+    <input type="text" #lastName>
+    
+    <!-- <p><b>Welcome {{firstName.value}}  {{lastName.value}}</b></p> -->
+    
+    </div>
+    <div>
+        <button (click)="greet(firstName, lastName)">click me</button>
+    </div>
+    <div>
+        <input [(ngModel)]="name" type="text">
+        {{name}}
+    </div>
+    <div *ngIf="displayName; else display">
+        this is a ngIf division
+    </div>
+    <ng-template #display>
+        Sorry no name to display
+    </ng-template>
+    <!-- <button class="btn btn-primary" >this is blue button </button> -->
+    ngSwitch------
+    <div [ngSwitch]="displayColor">
+        <div *ngSwitchCase="'red'">you selectec red</div>
+        <div *ngSwitchCase="'blue'">you selectec red</div>
+        <div *ngSwitchDefault>this color not available</div>
+
+    </div>
+    <div class="card-body">
+    <input [(ngModel)]="num" type="text">
+       
+    
+    <div [ngSwitch]="num">
+        <div *ngSwitchCase="'1'">one</div>
+        <div *ngSwitchCase="'2'">two</div>
+        <div *ngSwitchCase="'3'">three</div>
+        <div *ngSwitchCase="'4'">four</div>
+        <div *ngSwitchDefault>not a number</div>
+
+
+    </div>
+</div>
+ngFor-------
+<div *ngFor="let person of persons;index as i;first as f;even as e;odd as o">{{i}} {{person}} {{f}} {{e}}  {{o}}</div>
+
+<select (change)="changePerson($event)" name="person" >
+ <option *ngFor="let person of persons" >{{person}}</option>
+
+</select>
+
+
+
+
+
+
+
+</div>

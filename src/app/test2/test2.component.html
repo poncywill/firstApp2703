@@ -1,0 +1,6 @@
+<p>test2 works!</p>
+<h1 class=" fontColor" [class.italicFont]="!isApply"> class binding example</h1>
+<br>
+<button (click)="onClick($event)" [class.italicFont]="!isApply">click me</button>
+<h2 [style.color]="isApply?'red':'green'" >Style binding</h2>
+<h2 [ngStyle]="fontStyles">using ng style</h2>
