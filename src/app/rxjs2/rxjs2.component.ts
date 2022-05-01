@@ -14,6 +14,7 @@ export class Rxjs2Component implements OnInit {
   constructor() { }
   personsList=["jon","tia","hazel"]
   persons:Observable<string[]>=of(this.personsList)
+  studentName:Observable<string>=of("Poncy")
 
   array=[10,20,30];
   result= from(this.array);
@@ -29,6 +30,7 @@ export class Rxjs2Component implements OnInit {
 
 
   this.persons.subscribe(data=>console.log(data))
+  this.studentName.subscribe(y=>console.log(y))
 
   this.result.subscribe(x=>console.log(x))
 
