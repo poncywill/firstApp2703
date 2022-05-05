@@ -9,8 +9,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UsersComponent } from './users/users.component';
 
 const routes:Routes =[
-  // {path:"users",component:UsersComponent},
-  // {path:"userdetails",component:UserDetailsComponent}
+  {path:"users",component:UsersComponent},
+  {path:"userdetails",component:UserDetailsComponent},
   {path:'', redirectTo:'rxjs',pathMatch:'full'},   //default route
   {path:"pipes",component:PipesComponent},
   {path:"todo",component:TodoComponent},

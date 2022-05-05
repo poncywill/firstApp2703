@@ -14,10 +14,12 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { Rxjs2Component } from './rxjs2/rxjs2.component';
+import { AgePipe } from './age.pipe';
+import { MultiplyPipe } from './multiply.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent,TestComponent, Test2Component, Test3Component, PipesComponent, TodoComponent, UsersComponent, UserDetailsComponent, RxjsComponent, Rxjs2Component
+    AppComponent,TestComponent, Test2Component, Test3Component, PipesComponent, TodoComponent, UsersComponent, UserDetailsComponent, RxjsComponent, Rxjs2Component, AgePipe, MultiplyPipe
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule, AppRoutingModule

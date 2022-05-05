@@ -18,7 +18,8 @@ export class UserDetailsComponent implements OnInit {
   }
   loadData(){
     
-    this.userservice.getUsers().subscribe(data => this.users = data);
+    // this.userservice.getUsers().subscribe(data => this.users = data);
+    
   }
 
 }
