@@ -9,15 +9,16 @@ import { UserService } from '../user.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  public users;
+  public users:any=[]
   p:number=1
+  errormessage = "loading.........................."
 
  
   constructor(private userservice:UserService){}
 
   ngOnInit(): void {
     // this.users=this.userservice.getUsers()
-    this.userservice.getUsers().subscribe(data => this.users = data);
+    this.userservice.getUsers().subscribe(data => {this.users = data},(err)=>{this.errormessage=err.message})
   }
 
 }

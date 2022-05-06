@@ -1,5 +1,7 @@
 <p>users works!</p>
-userlength:{{users.length}}
+<!-- userlength:{{users.length}} -->
+
+<div *ngIf="users.length > 0; else nousers">
 
 
 <table class="table">
@@ -26,4 +28,11 @@ userlength:{{users.length}}
   
   </tbody>
 </table>
+</div>
+
+
 <pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+<ng-template #nousers>
+  <p class="alert alert-danger">{{errormessage}}</p>
+</ng-template>
