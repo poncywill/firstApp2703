@@ -5,6 +5,7 @@ import { OfficeComponent } from './office/office.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import {Rxjs2Component} from './rxjs2/rxjs2.component'
+import { TdfComponent } from './tdf/tdf.component';
 import { TodoComponent } from './todo/todo.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserComponent } from './user/user.component';
@@ -21,6 +22,7 @@ const routes:Routes =[
   {path:"userdetails",component:UserDetailsComponent},
   {path:'', redirectTo:'rxjs',pathMatch:'full'},   //default route
   {path:"pipes",component:PipesComponent},
+  {path:"tdf",component:TdfComponent},
   {path:"todo",component:TodoComponent},
   {path:"rxjs",component:RxjsComponent},
   {path:"rxjs2",component:Rxjs2Component},

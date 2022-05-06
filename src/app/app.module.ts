@@ -20,10 +20,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { OfficeComponent } from './office/office.component';
+import { TdfComponent } from './tdf/tdf.component';
 
 @NgModule({
   declarations: [
-    AppComponent,TestComponent, Test2Component, Test3Component, PipesComponent, TodoComponent, UsersComponent, UserDetailsComponent, RxjsComponent, Rxjs2Component, AgePipe, MultiplyPipe, UserComponent, HomeComponent, OfficeComponent
+    AppComponent,TestComponent, Test2Component, Test3Component, PipesComponent, TodoComponent, UsersComponent, UserDetailsComponent, RxjsComponent, Rxjs2Component, AgePipe, MultiplyPipe, UserComponent, HomeComponent, OfficeComponent, TdfComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule, AppRoutingModule,NgxPaginationModule

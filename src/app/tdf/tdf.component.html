@@ -1,0 +1,40 @@
+<p>tdf works!</p>
+<!-- forms are to collect data from users,then to initialize form fields,
+track the changes made to the field,validate inputs,display helpful errors -->
+
+<!-- 2 type of forms
+1.template driven forms (in html)
+2.reactive/modern  forms module (in .ts)  -->
+
+<div class="container">
+    <form class="col-md-6" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        {{userForm.value |json}}
+
+    <div class="form-group mt-2">
+        <label for="name">Name</label>
+        <input  class="form-control" type="text" id="name"  name="name" [(ngModel)]="userModel.name">
+   </div>
+   <div class="form-group mt-2">
+    <label for="name">Email</label>
+    <input  class="form-control" type="text" id="email"  name="email" [(ngModel)]="userModel.email">
+</div>
+<div class="form-group mt-2">
+    <label for="name">Phone</label>
+    <input  class="form-control" type="text" id="phone"  name="phone" [(ngModel)]="userModel.phone">
+</div>
+<div class="form-group mt-2">
+    <label for="country">Country</label>
+   <select class="form-select" name="country" id="country" [(ngModel)]="userModel.country">
+   <option *ngFor="let country of countries">{{country}}</option>
+</select>
+</div>
+<br>
+
+<button class="btn btn-primary" type="submit">submit</button>
+
+
+</form>
+<p>form valid:{{userForm.valid}}</p>
+<p>touched:{{userForm.touched}}</p>
+<p>submitted:{{userForm.submitted}}</p>
+</div>
