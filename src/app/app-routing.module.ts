@@ -5,11 +5,13 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import {Rxjs2Component} from './rxjs2/rxjs2.component'
 import { TodoComponent } from './todo/todo.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserComponent } from './user/user.component';
 
 import { UsersComponent } from './users/users.component';
 
 const routes:Routes =[
   {path:"users",component:UsersComponent},
+  {path:'user/:id',component:UserComponent},
   {path:"userdetails",component:UserDetailsComponent},
   {path:'', redirectTo:'rxjs',pathMatch:'full'},   //default route
   {path:"pipes",component:PipesComponent},

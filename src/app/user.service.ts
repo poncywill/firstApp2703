@@ -13,4 +13,7 @@ export class UserService {
     return this.http.get(this.url).pipe(catchError((err)=>{return throwError(err)}))
     
   }
+  getUser(id:any){
+    return this.http.get(this.url+`/${id}`)
+  }
 }

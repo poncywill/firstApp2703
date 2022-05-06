@@ -18,7 +18,8 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of users | paginate:{itemsPerPage:2, currentPage:p}" >
-      <th scope="row">{{user.id}}</th>
+
+      <th scope="row"> <a [routerLink]="['/user',user.id]">{{user.id}}</a></th>
       <td>{{user.name}}</td>
       <td>{{user.username}}</td>
       <td>{{user.email}}</td>

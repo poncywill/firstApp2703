@@ -17,10 +17,11 @@ import { Rxjs2Component } from './rxjs2/rxjs2.component';
 import { AgePipe } from './age.pipe';
 import { MultiplyPipe } from './multiply.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
-    AppComponent,TestComponent, Test2Component, Test3Component, PipesComponent, TodoComponent, UsersComponent, UserDetailsComponent, RxjsComponent, Rxjs2Component, AgePipe, MultiplyPipe
+    AppComponent,TestComponent, Test2Component, Test3Component, PipesComponent, TodoComponent, UsersComponent, UserDetailsComponent, RxjsComponent, Rxjs2Component, AgePipe, MultiplyPipe, UserComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule, AppRoutingModule,NgxPaginationModule
