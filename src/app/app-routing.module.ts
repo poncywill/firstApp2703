@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule,Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { OfficeComponent } from './office/office.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import {Rxjs2Component} from './rxjs2/rxjs2.component'
@@ -11,7 +13,11 @@ import { UsersComponent } from './users/users.component';
 
 const routes:Routes =[
   {path:"users",component:UsersComponent},
-  {path:'user/:id',component:UserComponent},
+  {path:'user/:id',component:UserComponent,children:[
+    {path:'',redirectTo:"home",pathMatch:'full'},
+    {path:"home",component:HomeComponent},
+    {path:"office",component:OfficeComponent}
+  ]},
   {path:"userdetails",component:UserDetailsComponent},
   {path:'', redirectTo:'rxjs',pathMatch:'full'},   //default route
   {path:"pipes",component:PipesComponent},
