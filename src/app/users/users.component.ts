@@ -10,13 +10,14 @@ import { UserService } from '../user.service';
 })
 export class UsersComponent implements OnInit {
   public users;
+  p:number=1
 
  
   constructor(private userservice:UserService){}
 
   ngOnInit(): void {
-    this.userservice.getUsers().subscribe(data => this.users = data);
     // this.users=this.userservice.getUsers()
+    this.userservice.getUsers().subscribe(data => this.users = data);
   }
 
 }

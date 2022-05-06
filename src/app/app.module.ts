@@ -16,13 +16,14 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { Rxjs2Component } from './rxjs2/rxjs2.component';
 import { AgePipe } from './age.pipe';
 import { MultiplyPipe } from './multiply.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AppComponent,TestComponent, Test2Component, Test3Component, PipesComponent, TodoComponent, UsersComponent, UserDetailsComponent, RxjsComponent, Rxjs2Component, AgePipe, MultiplyPipe
   ],
   imports: [
-    BrowserModule,FormsModule,HttpClientModule, AppRoutingModule
+    BrowserModule,FormsModule,HttpClientModule, AppRoutingModule,NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

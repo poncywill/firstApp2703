@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MultiplyPipe implements PipeTransform {
 
-  transform(value: number,multiply:number): any {
-    let result=value*2
+  transform(value: number,multiply:number): number{
+  let result=value*multiply
     return result;
   }
 

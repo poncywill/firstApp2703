@@ -1,29 +1,29 @@
 <p>users works!</p>
-<!-- user.component.html -->
-<div>
+userlength:{{users.length}}
+
+
 <table class="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">User Name</th>
-      <th scope="col">Email</th>
-   
+      <th scope="col">user name</th>
+      <th scope="col">email</th>
+    
    
 
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users | paginate:{itemsPerPage:2, currentPage:p}" >
       <th scope="row">{{user.id}}</th>
-      <td>{{user.name | uppercase}}</td>
+      <td>{{user.name}}</td>
       <td>{{user.username}}</td>
       <td>{{user.email}}</td>
-  
 
       
     </tr>
   
   </tbody>
 </table>
-</div>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
