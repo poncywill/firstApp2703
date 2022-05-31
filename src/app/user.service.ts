@@ -6,7 +6,8 @@ import { catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  url="https://jsonplaceholder.typicode.com/users"
+  // url="https://jsonplaceholder.typicode.com/users"
+  url="http://localhost:3000/users"
 
   constructor(private http:HttpClient) { }
   getUsers(){

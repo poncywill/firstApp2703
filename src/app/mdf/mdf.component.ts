@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { passwordValidator } from '../shared/password.validator';
 import {forbiddenNameValidator} from '../shared/username.validators'
 
 @Component({
@@ -44,17 +45,20 @@ export class MdfComponent implements OnInit {
   ngOnInit(): void {
     this.userForm=this.fb.group({
       username:["poncy",[Validators.required,Validators.minLength(3),forbiddenNameValidator]],
-      password:["test"],
-      confirmPassword:["test"],
+      password:[""],
+      confirmPassword:[""],
       email:["p@gmail.com",Validators.email],
       age:[''],
       parentname:[null],
+      Hobbies:this.fb.array([]),
       address:this.fb.group({
         city:["ekm"],
         state:["kerala"]
       })
     
-    })
+    },{validator:passwordValidator})
+
+
     this.userForm.get('age').valueChanges.subscribe(data=>{
       if(data<18){
         this.ageTrue=true
@@ -86,5 +90,14 @@ loadData(){
 }
 get userName(){
   return this.userForm.get('username')
+}
+get Hobbies(){
+  return this.userForm.get("Hobbies") as FormArray
+}
+addHobbies(){
+  this.Hobbies.push(this.fb.control(""))
+}
+removeHobby(i){
+  this.Hobbies.removeAt(i)
 }
 }
