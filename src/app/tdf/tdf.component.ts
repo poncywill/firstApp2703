@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 export class TdfComponent implements OnInit {
   countries=["INDIA","USA","UK"]
   userModel={
-    name:"",
+    name:"Poncy",
     email:"pt@gmail.com",
     phone:12344555,
     country:"INDIA"

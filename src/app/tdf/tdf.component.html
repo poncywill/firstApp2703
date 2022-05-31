@@ -4,7 +4,7 @@ track the changes made to the field,validate inputs,display helpful errors -->
 
 <!-- 2 type of forms
 1.template driven forms (in html)
-2.reactive/modern  forms module or MODEL DRIVEN FORMS (in .ts)  -->
+2.reactive/modern  forms module (in .ts)  -->
 
 <div class="container">
     <form class="col-md-6" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
@@ -12,50 +12,29 @@ track the changes made to the field,validate inputs,display helpful errors -->
 
     <div class="form-group mt-2">
         <label for="name">Name</label>
-        <input required class="form-control" minlength="3"  #name="ngModel" type="text" [class.is-invalid]="name.invalid && name.touched"  id="name"  name="name" [(ngModel)]="userModel.name">
-      <!-- <small class="text-daanger" [class.d-none]="name.valid || name.untouched">Name is required</small> -->
-      <div *ngIf="name.errors && (name.invalid && name.touched)">
-        <small *ngIf="name.errors['required']">name is requird</small>
-        <small *ngIf="name.errors['minlength']">name should have min 3 letters</small>
-
-      </div>
-
+        <input  class="form-control" type="text" id="name"  name="name" [(ngModel)]="userModel.name">
    </div>
-
-  
-   <!-- {{name.className}} -->
    <div class="form-group mt-2">
     <label for="name">Email</label>
-    <input  class="form-control" type="text" #email="ngModel" id="email"  name="email" [(ngModel)]="userModel.email">
+    <input  class="form-control" type="text" id="email"  name="email" [(ngModel)]="userModel.email">
 </div>
 <div class="form-group mt-2">
     <label for="name">Phone</label>
-    <input required class="form-control" type="text" #phone="ngModel" [class.is-invalid]="phone.invalid && phone.touched" pattern="^\d{10}$" id="phone"  name="phone" [(ngModel)]="userModel.phone">
-    <!-- <small class="text-daanger" [class.d-none]="phone.valid || phone.untouched">phone number is required and should be 10 digits</small> -->
-    <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
-        <small *ngIf="phone.errors['required']">phone no is requird</small>
-        <small *ngIf="phone.errors['pattern']">phone no should be 10 digits</small>
-        
-    </div>
+    <input  class="form-control" type="text" id="phone"  name="phone" [(ngModel)]="userModel.phone">
 </div>
 <div class="form-group mt-2">
     <label for="country">Country</label>
-   <select class="form-select" name="country" #country="ngModel" id="country" [(ngModel)]="userModel.country">
+   <select class="form-select" name="country" id="country" [(ngModel)]="userModel.country">
    <option *ngFor="let country of countries">{{country}}</option>
 </select>
 </div>
 <br>
 
+<button class="btn btn-primary" type="submit">submit</button>
 
-<button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit">submit</button>
-{{userForm.form.valid}}
 
 </form>
-<!-- <p>form valid:{{userForm.valid}}</p>
+<p>form valid:{{userForm.valid}}</p>
 <p>touched:{{userForm.touched}}</p>
-<p>submitted:{{userForm.submitted}}</p> -->
-
-<!-- <p>form valid:{{name.valid}}</p>
-<p>touched:{{name.touched}}</p> -->
-
+<p>submitted:{{userForm.submitted}}</p>
 </div>
