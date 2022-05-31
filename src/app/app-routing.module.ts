@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule,Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { MdfComponent } from './mdf/mdf.component';
 import { OfficeComponent } from './office/office.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
@@ -23,10 +24,12 @@ const routes:Routes =[
   {path:'', redirectTo:'rxjs',pathMatch:'full'},   //default route
   {path:"pipes",component:PipesComponent},
   {path:"tdf",component:TdfComponent},
+  {path:"mdf",component:MdfComponent}  ,
   {path:"todo",component:TodoComponent},
   {path:"rxjs",component:RxjsComponent},
   {path:"rxjs2",component:Rxjs2Component},
-  {path:"**",redirectTo:'rxjs'}            //any route
+  {path:"**",redirectTo:'rxjs'}  //any route
+        
 
 ]
 

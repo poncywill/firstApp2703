@@ -1,0 +1,63 @@
+<p>mdf works!</p>
+<div class="container">
+<h2 class="text-primary mt-5">User Management</h2>
+<form [formGroup]="userForm">
+    {{userForm.value | json}}
+    <div class="form-group mt-2">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" formControlName="username" >
+      <!-- <div *ngIf="userForm.get('username').invalid  && userForm.get('username').touched">
+          <div class="text-danger" *ngIf="userForm.get('username').errors['required']">
+              name is required </div>
+           </div> -->
+
+           <div *ngIf="userName?.invalid && userName?.touched">
+               <p  class="text-danger" *ngIf="userName.errors['required']">Name is required</p>
+               <p  class="text-danger" *ngIf="userName.errors['minlength']">Name minimum length should be 3</p>
+               <p  class="text-danger" *ngIf="userName.errors['forbidden']">Name is not allowed</p>
+
+           </div>
+    </div>
+    <div class="form-group mt-2">
+        <label for="password">Password</label>
+        <input type="password" class="form-control password" formControlName="password">
+    </div>
+    <div class="form-group mt-2">
+        <label for="confirmPassword">Confirm password</label>
+        <input type="password" class="form-control" formControlName="confirmPassword" >
+
+    </div>
+    <div formGroupName="address" class="mx-5">
+        <div class="form-group">
+            <label for="city">city</label>
+            <input type="text" formControlName="'city">
+        </div>
+        <div class="form-group" >
+            <label for="state">state</label>
+            <input type="text" formControlName="state">
+            
+        </div>
+
+
+    </div>
+    <div class="form-group my-3">
+        <label for="email" >email:</label>
+        <input type="email" name="email" formControlName="email" class="form-control">
+        <div *ngIf="this.userForm.get('email').invalid">
+            <p class="text-danger">pls check your email id</p>
+        </div>
+   </div>
+
+   <div class="form-group my-2">
+       <label for="age">Age</label>
+       <input type="text" name="age" formControlName="age" class="form-control">
+   </div>
+   <div class="form-group my-2" *ngIf="ageTrue">
+       <label for="parentname">Parent's name</label>
+       <input type="text" name="parentname" formControlName="parentname" class="form-control" > 
+   </div>
+
+    <button class="btn btn-primary">submit</button>
+    <button class="btn btn-info" (click)="loadData()">load data</button>
+</form>
+</div>

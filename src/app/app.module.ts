@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -21,13 +21,14 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { OfficeComponent } from './office/office.component';
 import { TdfComponent } from './tdf/tdf.component';
+import { MdfComponent } from './mdf/mdf.component';
 
 @NgModule({
   declarations: [
-    AppComponent,TestComponent, Test2Component, Test3Component, PipesComponent, TodoComponent, UsersComponent, UserDetailsComponent, RxjsComponent, Rxjs2Component, AgePipe, MultiplyPipe, UserComponent, HomeComponent, OfficeComponent, TdfComponent
+    AppComponent,TestComponent, Test2Component, Test3Component, PipesComponent, TodoComponent, UsersComponent, UserDetailsComponent, RxjsComponent, Rxjs2Component, AgePipe, MultiplyPipe, UserComponent, HomeComponent, OfficeComponent, TdfComponent, MdfComponent
   ],
   imports: [
-    BrowserModule,FormsModule,HttpClientModule, AppRoutingModule,NgxPaginationModule
+    BrowserModule,FormsModule, ReactiveFormsModule,HttpClientModule, AppRoutingModule,NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
